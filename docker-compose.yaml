@@ -1,0 +1,23 @@
+version: "3"
+services:
+  react_frontend:
+    container_name: react-frontend
+    build:
+      context: .
+      dockerfile: Dockerfile_frontend
+    volumes:
+      - ../react-frontend:/react-frontend
+    tty: true
+    ports:
+      - 3000:3000
+
+  react_api:
+    container_name: react-api
+    build:
+      context: .
+      dockerfile: Dockerfile_api
+    volumes:
+      - ../react-frontend:/react-api
+    tty: true
+    ports:
+      - 8000:8000

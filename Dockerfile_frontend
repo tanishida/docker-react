@@ -1,0 +1,4 @@
+FROM node:12.4.0-alpine
+
+# Install Node.js
+RUN apk add --no-cache yarn
